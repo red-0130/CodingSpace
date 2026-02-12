@@ -8,7 +8,7 @@ This image is built on `node:lts-trixie` and comes pre-configured with a powerfu
 
 ### Core Runtimes & Languages
 - **Node.js LTS**: The backbone of the environment.
-- **Bun (v1.3.8)**: A fast all-in-one JavaScript runtime.
+- **Bun (v1.3.9)**: A fast all-in-one JavaScript runtime.
 - **Python 3**: Pre-installed with `python3-venv` and `pip`.
 
 ### Development & Terminal Tools
