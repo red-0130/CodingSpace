@@ -7,11 +7,13 @@ A Docker-based development environment for deploying Node.js and Python developm
 This image is built on `node:lts-trixie-slim` using a **multi-stage build** process to ensure a lightweight and optimized final image. It comes pre-configured with a powerful suite of CLI tools and languages, with customizable versions.
 
 ### Core Runtimes & Languages
+
 - **Node.js LTS**: The backbone of the environment.
-- **Bun (v1.3.9)**: A fast all-in-one JavaScript runtime.
-- **Python 3**: Pre-installed with `python3-venv`, `pip`, and `python3-minimal`.
+- **Bun (v1.3.13)**: A fast all-in-one JavaScript runtime.
+- **Python 3**: Pre-installed with `python3-venv`, `pip`, `pipx`, and `python3-minimal`.
 
 ### Development & Terminal Tools
+
 - **Neovim**: Hyperextensible Vim-based text editor.
 - **Zellij**: A modern terminal workspace/multiplexer.
 - **Lazygit**: Simple terminal UI for git commands.
@@ -25,16 +27,21 @@ This image is built on `node:lts-trixie-slim` using a **multi-stage build** proc
 ## Getting Started
 
 ### Prerequisites
+
 - Docker installed on your system.
 
 ### Build the Image
+
 You can build the image with default versions:
+
 ```bash
 docker build -t codingspace .
 ```
 
 #### Customizing Versions
+
 You can specify custom versions for tools using build arguments:
+
 ```bash
 docker build \
   --build-arg NV_VERSION=0.10.0 \
@@ -44,7 +51,9 @@ docker build \
 ```
 
 ### Run the Container
+
 ```bash
 docker run -it codingspace
 ```
+
 This will drop you into a bash shell as the `coder` user with `sudo` privileges.

@@ -1,9 +1,9 @@
 # --- Version Configuration ---
 ARG NV_VERSION=latest
 ARG ZJ_VERSION=latest
-ARG LG_VERSION=0.57.0
+ARG LG_VERSION=0.51.1
 ARG RG_VERSION=15.1.0
-ARG FD_VERSION=10.3.0
+ARG FD_VERSION=10.4.2
 ARG SF_VERSION=1.5.0
 
 # --- Stage 1: Builder ---
