@@ -1,7 +1,7 @@
 # --- Version Configuration ---
 ARG NV_VERSION=latest
 ARG ZJ_VERSION=latest
-ARG LG_VERSION=0.51.1
+ARG LG_VERSION=0.61.1
 ARG RG_VERSION=15.1.0
 ARG FD_VERSION=10.4.2
 ARG SF_VERSION=1.5.0
@@ -56,7 +56,7 @@ ARG USER=coder
 
 # Dependencies for LazyVim, SSH, and Pip
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    sudo curl git python3-minimal python3-pip python3-venv \
+    sudo curl git python3-minimal python3-pip pipx python3-venv \
     ca-certificates unzip openssh-client build-essential make gettext \
     && ln -s /usr/bin/python3 /usr/bin/python \
     && rm -rf /var/lib/apt/lists/*

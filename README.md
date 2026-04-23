@@ -14,13 +14,13 @@ This image is built on `node:lts-trixie-slim` using a **multi-stage build** proc
 
 ### Development & Terminal Tools
 
-- **Neovim**: Hyperextensible Vim-based text editor.
-- **Zellij**: A modern terminal workspace/multiplexer.
-- **Lazygit**: Simple terminal UI for git commands.
-- **Superfile**: A pretty and fancy terminal file manager.
-- **Ripgrep**: Line-oriented search tool that recursively searches the current directory.
-- **Fd**: A simple, fast and user-friendly alternative to 'find'.
-- **FZF**: A general-purpose command-line fuzzy finder.
+- **Neovim (latest)**: Hyperextensible Vim-based text editor.
+- **Zellij (latest)**: A modern terminal workspace/multiplexer.
+- **Lazygit (0.61.1)**: Simple terminal UI for git commands.
+- **Superfile (1.5.0)**: A pretty and fancy terminal file manager.
+- **Ripgrep (15.1.0)**: Line-oriented search tool that recursively searches the current directory.
+- **Fd (10.4.2)**: A simple, fast and user-friendly alternative to 'find'.
+- **FZF (latest)**: A general-purpose command-line fuzzy finder.
 - **Build Essentials**: Includes `make`, `gcc`, etc.
 - **OpenSSH Client**: For secure remote connections.
 
