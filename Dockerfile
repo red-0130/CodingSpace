@@ -81,7 +81,7 @@ ARG USER=coder
 
 # Dependencies for LazyVim, SSH, and Python
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    sudo curl wget procps git python3-minimal \
+    sudo curl wget procps git python3\
     ca-certificates unzip openssh-client build-essential make gettext \
     && ln -s /usr/bin/python3 /usr/bin/python \
     && rm -rf /var/lib/apt/lists/*
