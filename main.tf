@@ -137,7 +137,8 @@ resource "docker_volume" "home_volume" {
 resource "docker_image" "main" {
   name = "coder-${data.coder_workspace.me.id}"
   build {
-    context = "./"
+    context    = "./"
+    cache_from = ["ghcr.io/red-0130/codingspace:latest"]
   }
   triggers = {
     dir_sha1 = sha1(join("", [for f in fileset(path.module, "Dockerfile") : filesha1(f)]))
