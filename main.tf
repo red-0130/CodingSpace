@@ -134,20 +134,19 @@ resource "docker_volume" "home_volume" {
   }
 }
 
+data "docker_registry_image" "main" {
+  name = "ghcr.io/red-0130/codingspace:latest"
+}
+
 resource "docker_image" "main" {
-  name = "coder-${data.coder_workspace.me.id}"
-  build {
-    context    = "./"
-    cache_from = ["ghcr.io/red-0130/codingspace:latest"]
-  }
-  triggers = {
-    dir_sha1 = sha1(join("", [for f in fileset(path.module, "Dockerfile") : filesha1(f)]))
-  }
+  name          = data.docker_registry_image.main.name
+  pull_triggers = [data.docker_registry_image.main.sha256_digest]
+  keep_locally  = true
 }
 
 resource "docker_container" "workspace" {
   count = data.coder_workspace.me.start_count
-  image = docker_image.main.name
+  image = docker_image.main.image_id
   # Uses lower() to avoid Docker restriction on container names.
   name = "coder-${data.coder_workspace_owner.me.name}-${lower(data.coder_workspace.me.name)}"
   # Hostname makes the shell more user friendly: coder@my-workspace:~$
